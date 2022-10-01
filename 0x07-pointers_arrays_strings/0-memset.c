@@ -1,17 +1,42 @@
-#include "main.h"
 /**
- * _memset - fills memory with a constant byte,
- * @s: memory area.
- * @b: constant byte.
- * @n: bytes filled.
- * Return: the pointer to dest.
- */
-char *_memset(char *s, char b, unsigned int n)
+ *
+ *  * _memset - pupulate certain number of elements
+ *
+ *   * of a string with a particlar character value
+ *
+ *    * @str: char pointer
+ *
+ *     * @c: int character value to populate
+ *
+ *      * @n: number of element of str to populate
+ *
+ *       * Return: str
+ *
+ *        */
+
+
+
+char *_memset(char *str, int c, unsigned int n)
+
 {
-	unsigned int i;
 
-	for (i = 0; i < n; i++)
-		*(s + i) =  b;
+		int i = 0;
 
-	return (s);
+
+
+			while (n > 0)
+
+					{
+
+								*(str + i) = (char) c;
+
+										i++;
+
+												n--;
+
+													}
+
+				return (str);
+
 }
+

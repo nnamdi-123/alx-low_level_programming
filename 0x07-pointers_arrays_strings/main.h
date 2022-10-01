@@ -1,15 +1,33 @@
-#ifndef _MAIN_H_
-#define _MAIN_H_
+#ifndef MAIN_H
 
-char *_memset(char *s, char b, unsigned int n);
-char *_memcpy(char *dest, char *src, unsigned int n);
-char *_strchr(char *s, char c);
+#define MAIN_H
+
+#define NULL ((void *) 0)
+
+
+
+#include "0-memset.c"
+
+#include "1-memcpy.c"
+
+#include "2-strchr.c"
+
+#include "3-strspn.c"
+
+#include "4-strpbrk.c"
+
+
+
+char *_memset(char *, int, unsigned int);
+
+char *_memcpy(char *, char *, unsigned int);
+
+char *_strchr(char *, char);
+
 unsigned int _strspn(char *s, char *accept);
+
 char *_strpbrk(char *s, char *accept);
-char *_strstr(char *haystack, char *needle);
-int _putchar(char);
-void print_chessboard(char (*a)[8]);
-void print_diagsums(int *a, int size);
-void set_string(char **s, char *to);
+
+
 
 #endif
