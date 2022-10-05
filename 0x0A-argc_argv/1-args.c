@@ -2,25 +2,31 @@
 
 /**
  *
- *  * main - print the length of args passed to the programm
+ *  * main - write a program that print the number of argumments passed into it
  *
- *   * @argc: length of cli args
+ *   *
  *
- *    * @argv: list of cli args
+ *    * @argc: this is the argument count
  *
- *     * Return: zero always
+ *     * @argv: this is the argument vector
  *
- *     */
+ *      *
+ *
+ *       * Return: this return to 0
+ *
+ *       *
+ *
+ *       */
 
 
 
-int main(int argc, char **argv)
+int main(int argc, char *argv[])
 
 {
 
-		(void)argv;
+	        printf("%d\n", argc - 1);
 
-			printf("%d\n", argc - 1);
+			(void)argv;
 
 				return (0);
 
