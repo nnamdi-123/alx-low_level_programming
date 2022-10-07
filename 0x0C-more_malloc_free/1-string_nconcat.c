@@ -1,99 +1,89 @@
+#include "main.h"
+
 #include <stdlib.h>
 
-#include <string.h>
+
 
 /**
  *
- *  * string_nconcat - concate @s1 with @n number of chars from @s2
+ *  * string_nconcat - Concatenates two strings using at
  *
- *   * @s1: string
+ *   *                  most an inputted number of bytes.
  *
- *    * @s2: string
+ *    * @s1: The first string.
  *
- *     * @n: unsigned int
+ *     * @s2: The second string.
  *
- *      * Return: char pointer to the memory address of concatenated string
+ *      * @n: The maximum number of bytes of s2 to concatenate to s1.
  *
- *       */
-
-
+ *       *
+ *
+ *        * Return: If the function fails - NULL.
+ *
+ *         *         Otherwise - a pointer to the concatenated space in memory.
+ *
+ *          */
 
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 
 {
 
-		unsigned int len;
+		char *concat;
 
-			unsigned int i, j = 0;
-
-				char *str, *s3, *s4;
+			unsigned int len = n, index;
 
 
 
-					if (s1 != NULL)
+				if (s1 == NULL)
 
-							{
+							s1 = "";
 
-										s3 = s1;
 
-											}
 
-						else
+					if (s2 == NULL)
 
-								{
+								s2 = "";
 
-											s3 = "";
 
-												}
 
-							if (s2 != NULL)
+						for (index = 0; s1[index]; index++)
 
-									{
+									len++;
 
-												s4 = s2;
 
-													}
 
-								else
+							concat = malloc(sizeof(char) * (len + 1));
 
-										{
 
-													s4 = "";
 
-														}
+								if (concat == NULL)
 
-									len = strlen(s3);
+											return (NULL);
 
-										if (n >= strlen(s4))
 
-													n = strlen(s4);
 
-											str = malloc(sizeof(char) * (len + n));
+									len = 0;
 
-												if (str == NULL)
 
-															return (NULL);
 
-													for (i = 0; i < len; i++)
+										for (index = 0; s1[index]; index++)
 
-															{
+													concat[len++] = s1[index];
 
-																		str[i] = s3[i];
 
-																			}
 
-														for (i = len; i < (len + n); i++)
+											for (index = 0; s2[index] && index < n; index++)
 
-																{
+														concat[len++] = s2[index];
 
-																			str[i] = s4[j];
 
-																					j++;
 
-																						}
+												concat[len] = '\0';
 
-															str[i] = '\0';
 
-																return (str);
+
+													return (concat);
 
 }
+
+
