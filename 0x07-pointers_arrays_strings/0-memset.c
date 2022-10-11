@@ -39,4 +39,3 @@ char *_memset(char *str, int c, unsigned int n)
 				return (str);
 
 }
-
